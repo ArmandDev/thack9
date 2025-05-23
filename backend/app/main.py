@@ -7,7 +7,7 @@ import os
 # Import routers and database components
 # These will be implemented in separate files
 # from .routers import users, expenses, sick_leave, education, assets, maintenance, travel
-# from .database import engine, Base, get_db
+from .database import engine, Base, get_db
 # from .auth import oauth2_scheme, get_current_user
 
 # Set up logging
@@ -18,6 +18,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Create tables in the database
+# Commented out as we'll use init_db.py for initial setup
 # Base.metadata.create_all(bind=engine)
 
 # Initialize FastAPI app

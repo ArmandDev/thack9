@@ -57,6 +57,12 @@ if exist venv\Scripts\activate.bat (
 echo Installing backend dependencies...
 pip install -r requirements.txt
 
+:: Initialize the database if it doesn't exist
+if not exist app.db (
+  echo Initializing database...
+  python init_db.py
+)
+
 :: Run backend server
 echo Starting backend server...
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
