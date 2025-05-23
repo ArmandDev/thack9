@@ -29,7 +29,72 @@ A comprehensive web application for centralized HR, Expense, Asset, Maintenance,
 - Docker (optional)
 - MySQL (or use SQLite for development)
 
-### Backend Setup
+### Quick Start (Recommended)
+
+We provide scripts to quickly set up and run the entire application on your local machine:
+
+#### For Linux/macOS Users:
+
+1. Make the script executable:
+   ```
+   chmod +x run.sh
+   ```
+
+2. Run the application (both backend and frontend):
+   ```
+   ./run.sh
+   ```
+
+   You can also run only the backend or frontend:
+   ```
+   ./run.sh --backend
+   ./run.sh --frontend
+   ```
+
+#### For Windows Users:
+
+1. Run the application (both backend and frontend):
+   ```
+   run.bat
+   ```
+
+   You can also run only the backend or frontend:
+   ```
+   run.bat --backend
+   run.bat --frontend
+   ```
+
+### Using Docker Compose (Alternative)
+
+For the simplest setup with Docker:
+
+1. Make sure Docker and Docker Compose are installed on your system.
+
+2. Run all services with a single command:
+   ```
+   docker-compose up
+   ```
+
+3. To run in the background (detached mode):
+   ```
+   docker-compose up -d
+   ```
+
+4. To stop all services:
+   ```
+   docker-compose down
+   ```
+
+5. Access the application at:
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:8000
+   - API Documentation: http://localhost:8000/docs
+
+### Manual Setup
+
+If you prefer to set up each component manually, follow these instructions:
+
+#### Backend Setup
 
 1. Navigate to the backend directory:
    ```
@@ -56,7 +121,7 @@ A comprehensive web application for centralized HR, Expense, Asset, Maintenance,
 
 6. Access the API documentation at http://localhost:8000/docs
 
-### Frontend Setup
+#### Frontend Setup
 
 1. Navigate to the frontend directory:
    ```
@@ -77,9 +142,9 @@ A comprehensive web application for centralized HR, Expense, Asset, Maintenance,
 
 5. Access the application at http://localhost:3000
 
-### Docker Setup
+#### Docker Setup (Individual Containers)
 
-You can also run the application using Docker:
+You can also run each component in separate Docker containers:
 
 1. Build and run the backend:
    ```
@@ -92,7 +157,7 @@ You can also run the application using Docker:
    ```
    cd frontend
    docker build -t thack9-frontend .
-   docker run -p 3000:3000 thack9-frontend
+   docker run -p 3000:80 thack9-frontend
    ```
 
 ## Deployment
